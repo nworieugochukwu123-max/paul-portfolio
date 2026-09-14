@@ -246,6 +246,32 @@ big{
     padding: 10px;
 }
 
+.con3{
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
+    padding: 10px;
+    max-width: 340px;
+    width: 100%;
+}
+
+.con3 img{
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#projects{
+    background-color: rgb(214, 228, 240);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 0px;
+}
 .con2:hover{
     box-shadow: 0px 0px 2px 0px black;
 }
