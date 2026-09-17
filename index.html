@@ -6,6 +6,13 @@
     <title>Paul Nworie Portfolio v1</title>
     <link rel="stylesheet" href="stylee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js"
+            }
+        }
+    </script>
 </head>
 <body>
     <div id="scroll-progress"></div>
@@ -29,6 +36,13 @@
         
     </div>
     <img src="./pics/me.png" alt="This is me" class="me">
+    <section id="three-hero" aria-label="Interactive Paul dot dev 3D scene">
+        <div class="three-hero-copy">
+            <span>Interactive space</span>
+            <p>Move your cursor across the grid</p>
+        </div>
+        <div id="three-canvas" aria-hidden="true"></div>
+    </section>
     <section id="about">
         <img src="./pics/nn.jpg" class="mework reveal reveal-right" loading="lazy">
         <div class="atext reveal reveal-left">
@@ -177,5 +191,6 @@
         </div>
     </footer>
     <script src="script1.js"></script>
+    <script type="module" src="three-scene.js"></script>
 </body>
 </html>
