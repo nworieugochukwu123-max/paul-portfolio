@@ -1,196 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Nworie Portfolio v1</title>
-    <link rel="stylesheet" href="stylee.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js"
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul.dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="scroll-progress"></div>
-    <div class="topbar">
-        <p class="name"><big>Paul</big>.dev</p>
-        <i class="fa-solid fa-bars" id="hamburger"></i>
-        <div class="navlinks" id="navlinks">
-            <a href="#home" class="topb">Home</a>
-            <a href="#about" class="topb">About</a>
-            <a href="#services" class="topb">Services</a>
-            <a href="#projects" class="topb">Projects</a>
-            <a href="#contact" class="topb">Contact</a>
-        </div>
+  <div id="progress"></div>
+
+  <header class="topbar" id="topbar">
+    <a href="#home" class="name"><big>Paul</big>.dev</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="#home" class="topb">Home</a>
+      <a href="#about" class="topb">About</a>
+      <a href="#skills" class="topb">Skills</a>
+      <a href="#projects" class="topb">Projects</a>
+      <a href="#contact" class="topb">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero-track" id="home">
+  <section class="hero" id="hero">
+    <div class="stage" id="stage"></div>
+    <h1 class="hero-title" aria-label="I write a lot of code. I’m a web developer. I make websites look out of this world. I write resumes. I also write CVs. Get you sitting in an interview.">
+      <span class="t t1" aria-hidden="true">I write a lot of code.</span>
+      <span class="t t2" aria-hidden="true">I’m a web developer.</span>
+      <span class="t t3" aria-hidden="true">I make websites look out of this world.</span>
+      <span class="t t4" aria-hidden="true">I write resumes.</span>
+      <span class="t t5" aria-hidden="true">I also write CVs.</span>
+      <span class="t t6" aria-hidden="true">Get you sitting in an interview.</span>
+    </h1>
+
+    <!-- Hero image: hovering reveals the "back" image under the cursor.
+         Use two images with the same size and framing, then uncomment the <img> tags. -->
+    <div class="hero-image" id="heroImage">
+      <div class="layer back"><img src="./images/spider.png" alt=""></div>
+      <div class="layer front"><img src="./images/me.png" alt="Paul"></div>
+      <div class="lens" aria-hidden="true"></div>
     </div>
-    <div class="home" id="home">
-        <p class="he">Hello. i'm</p>
-        <h1><big>Paul Nworie</big><br>Web dev. & Presentation designer</h1>
-        <div><p class="sloggan">I build morden, responsive and user- friendly websites and web applications<br>I also create beautiful Power point Presentations for companies and meetings </p><br><br></div>
-        <a href="./pdfs/My cv.pdf" download="PaulCV.pdf" class="button1">Download CV</a>
-        <a href="#contact" class="button2">Contact me</a>
-        
+    <div class="hero-ui">
+      <div class="hint">Drag to rotate</div>
     </div>
-    <img src="./pics/me.png" alt="This is me" class="me">
-    <section id="three-hero" aria-label="Interactive Paul dot dev 3D scene">
-        <div class="three-hero-copy">
-            <span>Interactive space</span>
-            <p>Move your cursor across the grid</p>
-        </div>
-        <div id="three-canvas" aria-hidden="true"></div>
-    </section>
-    <section id="about">
-        <img src="./pics/nn.jpg" class="mework reveal reveal-right" loading="lazy">
-        <div class="atext reveal reveal-left">
+  </section>
+  </div>
 
-            <p class="am">About me</p>
-            <h2>Passionate about<br>building digital solutions</h2>
-            <p>i'm a web developer and presentation designer with a passion for creating clean, efficient and impactful digital experiences. I enjoy turning ideas into real products that solve problems and add value.</p><br>
-            <a href="read.html" class="rm">Read More </a>
+  <!-- ===== About ===== -->
+  <section id="about" class="sec">
+    <div class="bg"><i class="blob b1" data-par="-0.15"></i><i class="blob b2" data-par="0.2"></i></div>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal="up">About me</p>
+      <h2 class="big" data-split>Hi, I’m Nworie Paul Ugochukwu.</h2>
+      <div class="grid2">
+        <p class="lead" data-reveal="left">I’m a frontend web developer who builds fast, beautiful websites for real businesses — restaurants, car dealers, fashion stores and personal brands. I also write resumes and CVs that make hiring managers stop scrolling and start dialling.</p>
+        <div class="cards">
+          <div class="card" data-reveal="right"><span class="ic">⌨️</span><h3>Frontend development</h3><p>Responsive, animated sites that feel as good as they look.</p></div>
+          <div class="card" data-reveal="right" style="--d:150"><span class="ic">📄</span><h3>Resume &amp; CV writing</h3><p>Clear, ATS-friendly documents that tell your story and get you noticed.</p></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="services">
-        <P class="am">Services</P>
-        <h2>What i Do</h2>
-        <div class="cont stagger" loading="lazy">
-            <div class="con">
-                <div class="iconhouse">
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-                <h3>Web development</h3>
-                <p>Building responsive, fast and modern websites using best practices and latest technologies.</p>
-                <a href="learn.html" class="learn">Learn more</a>
-            </div>
-            <div class="con">
-                <div class="iconhouse">
-                    <i class="fa-solid fa-paintbrush"></i>
-                </div>
-                <h3>Responsive Design</h3>
-                <p>Creating beautiful designs that work seamlessly on all devices and screens sizes.</p>
-                <a href="learn.html" class="learn">Learn more</a>
-            </div>
-            <div class="con">
-                <div class="iconhouse">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <h3>Web Applications</h3>
-                <p>Developing powerful web application tailored to your business needs.</p>
-                <a href="learn.html" class="learn">Learn more</a>
-            </div>
-            
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="sec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal="up">Skills</p>
+      <h2 class="big" data-split>Two crafts. One goal: make you look unforgettable.</h2>
+    </div>
+    <div class="marquee" aria-hidden="true"><div class="track" id="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span><span>Responsive design</span><span>Scroll animations</span><span>Resumes</span><span>CVs</span></div></div>
+    <div class="wrap grid2">
+      <div class="card" data-reveal="left"><h3>Frontend development</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive design</li><li>Three.js</li><li>Scroll animations</li><li>UI design</li></ul></div>
+      <div class="card" data-reveal="right"><h3>Resume &amp; CV writing</h3><ul class="chips"><li>Resumes</li><li>CVs</li><li>ATS-friendly</li><li>Tailored to the role</li><li>Clear storytelling</li></ul>
+        <div class="cv" data-reveal="zoom" style="--d:300"><div class="hd"><i class="av"></i>Your name here</div>
+          <div class="ln" style="--w:92%;--i:0"></div><div class="ln" style="--w:70%;--i:1"></div><div class="ln" style="--w:84%;--i:2"></div><div class="ln" style="--w:55%;--i:3"></div><div class="ln" style="--w:78%;--i:4"></div>
+          <span class="badge">✓ Interview booked</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects (replace the # links with your real project URLs) ===== -->
+  <section id="projects" class="sec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal="up">Projects</p>
+      <h2 class="big" data-split>Things I’ve built.</h2>
+      <div class="stack">
+        <article class="proj" style="--i:0"><div class="pin"><div class="viz v1"></div><div class="info"><h3>Chuks Collections</h3><p>A premium fashion storefront for a modern Nigerian brand, designed to feel elevated, easy to browse, and ready for conversions.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/Chuks-Collections-Abuja/">View project →</a></div></div></article>
+        <article class="proj" style="--i:1"><div class="pin"><div class="viz v2"></div><div class="info"><h3>Devs company Website</h3><p>A dark, three.js powered landing page for DEVs, a new company offering young tech talent a business opportunity.</p><div class="tags"><span>Responsive</span><span>3D</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/shere.dev/">View project →</a></div></div></article>
+        <article class="proj" style="--i:2"><div class="pin"><div class="viz v3"></div><div class="info"><h3>Ice & Steel</h3><p>An immersive scroll-driven 3D website where a rolling ice stone tumbles through falling snow and clouds, then the sky turns to a lightning storm and reveals a cold steel flask, beaded with condensation, that you can drag to rotate.</p><div class="tags"><span>3js</span><span>Mobile-first</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/bottle/">View project →</a></div></div></article>
+        <article class="proj" style="--i:3"><div class="pin"><div class="viz v4"></div><div class="info"><h3>Resumes &amp; CVs</h3><p>Tailored, ATS-friendly documents that put your best work forward and get you into the interview room.</p><div class="tags"><span>Resume</span><span>CV</span><span>ATS-friendly</span></div><a class="link" href="#contact">Get yours →</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="sec">
+    <div class="bg"><i class="blob b1" data-par="-0.2"></i><i class="blob b2" data-par="0.1"></i></div>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal="up">Contact</p>
+      <h2 class="big" data-split>Let’s make something out of this world.</h2>
+      <div class="grid2">
+        <div data-reveal="left">
+          <p class="lead">Need a website, a resume or a CV that gets you noticed? Tell me about it and I’ll get back to you.</p>
+          <div class="contact-links" aria-label="Social media links">
+            <a class="social-link tiktok" href="https://www.tiktok.com/@faaaaaaah248" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="social-link linkedin" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-link whatsapp" href="https://wa.me/2348154681877" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="social-link github" href="https://github.com/nworieugochukwu123-max" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="social-link fiverr" href="https://www.fiverr.com/yourusername" target="_blank" rel="noreferrer" aria-label="Fiverr">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.7 8.3h2.3V5.6h-2.3c-2.9 0-4.4 1.5-4.4 3.7v1.5H8.5v2.4h1.8v6.2h2.9v-6.2h3.2v-2.4h-3.2V9.6c0-1.1.7-1.3 2.5-1.3zm-9.4 4.3h2.9v7.2H5.3v-7.2zm0-2.9h2.9V6.5H5.3v3.2z"/></svg>
+            </a>
+            <a class="social-link email" href="mailto:nworieugochukwu123@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+          <a class="cta" id="mail" data-magnet href="mailto:nworieugochukw123@gmail.com">Say hello ↗</a>
         </div>
-        
-    </section>
+        <form class="card" id="form" data-reveal="right">
+          <label for="n">Your name</label><input id="n" name="name" required>
+          <label for="e">Your email</label><input id="e" name="email" type="email" required>
+          <label for="m">How can I help?</label><textarea id="m" name="message" rows="4" required></textarea>
+          <button class="cta" type="submit" data-magnet>Send message</button>
+        </form>
+      </div>
+      <p class="foot">© <span id="yr"></span> Nworie Paul Ugochukwu · Frontend web developer &amp; resume / CV writer</p>
+    </div>
+  </section>
 
-    <section id="skills">
-            <P class="am">Skills</P>
-            <h2>My skills</h2>
-            <div class="cont stagger">
-                <div class="con2">
-                    <div>
-                        <i class="fa-brands fa-html5" id="proicon1"></i>
-                    </div>
-                    <h4>Rating:</h4>
-                    <p>95%</p>
-                </div>
-                <div class="con2">
-                    <div>
-                        <i class="fa-brands fa-css3-alt" id="proicon2"></i>
-                    </div>
-                    <h4>Rating:</h4>
-                    <p>95%</p>
-                </div>
-                <div class="con2">
-                    <div>
-                        <i class="fa-brands fa-js" id="proicon3"></i>
-                    </div>
-                    <h4>Rating:</h4>
-                    <p>50%</p>
-                </div>
-                <div class="con2">
-                    <div>
-                        <i class="fa-brands fa-react" id="proicon4"></i>
-                    </div>
-                    <h4>Rating:</h4>
-                    <p>80%</p>
-                </div>
-                <div class="con2">
-                
-                </div>
-            </div>
-    </section>
-    <section id="projects">
-        <P class="am">Projects</P>
-        <h2>My Recent work</h2>
-        <div class="cont stagger">
-                <div class="con3">
-                    <img src="./pics/Screenshot 2026-09-14 at 13-57-29 DEVs — Your Next Career in Code.png"><br/>
-                    <a href="https://nworieugochukwu123-max.github.io/DotDev-company/" class="rm">visit</a>
-                </div>
-                <div class="con3">
-                    <img src="./pics/Screenshot 2026-09-14 at 20-12-22 VANTA MOTORS Drive Different.png"><br/>
-                    <a href="https://nworieugochukwu123-max.github.io/car-dealer/" class="rm">visit</a>
-                </div>
-                <div class="con3">
-                    <img src="./pics/Screenshot 2026-09-14 at 20-16-37 Veloura Bistro.png"><br/>
-                    <a href="https://nworieugochukwu123-max.github.io/resturant/" class="rm">visit</a>
-                </div>
-                
-            </div>
-    </section>
-    <section id="contact">
-        <p class="am1">Contact</p>
-        <h2 class="work">Let's work together</h2>
-        <p class="am2">Have a project in mind or want to work together?<br>Feel free to reach out to me</p>
-
-        <div class="contact-wrap reveal reveal-zoom">
-            <div class="contact-info">
-                <p>Click the email to send an email directly to me.</p>
-                <a href="mailto:nworieugochukwu123@gmail.com" class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>nworieugochukwu123@gmail.com</span>
-                </a>
-                <div class="info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+234 916 863 5267</span>
-                </div>
-                <div class="info-item location-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <span>Agbani, ESUT, Enugu, Nigeria</span>
-                        <iframe
-                            class="location-map"
-                            src="https://www.google.com/maps?q=Abani%2C%20ESUT%2C%20Enugu%2C%20Nigeria&output=embed"
-                            title="Map showing Abani, ESUT, Enugu, Nigeria"
-                            loading="lazy"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div id="mess">
-                <input type="text" placeholder="Your Name" class="inps">
-                <input type="email" placeholder="Your Email" class="inps" required>
-                <input type="text" placeholder="Subject" class="inps">
-                <textarea placeholder="Message" class="inps" rows="4"></textarea>
-                <input type="submit" value="Send Message" class="button1 sendbtn" id="comming-soon">
-            </div>
-        </div>
-    </section>  
-    <footer>
-        <div class="footer-wrap">
-            <p class="footer-brand"><span>Paul</span>.dev</p>
-            <p class="footer-copy">Copyright 2026 Paul Nworie. All rights reserved.</p>
-            <a href="#home" class="footer-top">Back to top ^</a>
-        </div>
-    </footer>
-    <script src="script1.js"></script>
-    <script type="module" src="three-scene.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
