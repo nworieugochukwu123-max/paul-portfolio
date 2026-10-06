@@ -11,6 +11,56 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="loader" id="loader" role="progressbar" aria-label="Loading portfolio" aria-valuemin="1" aria-valuemax="100" aria-valuenow="1">
+    <div class="loader-inner">
+      <p class="loader-label">Paul.dev <span>— PORTFOLIO</span></p>
+      <div class="loader-count"><span id="loader-number">01</span><span class="loader-percent">%</span></div>
+      <div class="loader-track"><span id="loader-fill"></span></div>
+      <p class="loader-caption">Building something out of this world<span class="loader-dots">...</span></p>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const loader = document.getElementById('loader');
+      const number = document.getElementById('loader-number');
+      const fill = document.getElementById('loader-fill');
+      const duration = 3600;
+      let start;
+      let counted = false;
+      let revealed = false;
+
+      document.body.classList.add('is-loading');
+
+      const reveal = () => {
+        if (!counted || document.readyState !== 'complete' || revealed) return;
+        revealed = true;
+        loader.classList.add('is-done');
+        document.body.classList.remove('is-loading');
+        window.setTimeout(() => loader.remove(), 700);
+      };
+
+      window.addEventListener('load', reveal, { once: true });
+
+      const count = (now) => {
+        if (!start) start = now;
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.min(100, Math.floor(progress * 100) + 1);
+        number.textContent = String(value).padStart(2, '0');
+        fill.style.transform = `scaleX(${progress})`;
+        loader.setAttribute('aria-valuenow', value);
+
+        if (progress < 1) {
+          requestAnimationFrame(count);
+          return;
+        }
+
+        counted = true;
+        reveal();
+      };
+
+      requestAnimationFrame(count);
+    })();
+  </script>
   <div id="progress"></div>
 
   <header class="topbar" id="topbar">

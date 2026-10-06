@@ -1,3 +1,9 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+/* ============ Navbar ============ */
 const bar = document.getElementById('topbar');
 const btn = document.getElementById('menu-btn');
 const links = [...document.querySelectorAll('.topb')];
@@ -9,7 +15,19 @@ const setMenu = (open) => {
 };
 
 btn.addEventListener('click', () => setMenu(!bar.classList.contains('open')));
-links.forEach((l) => l.addEventListener('click', () => setMenu(false)));
+
+// Smooth-scroll short hops, jump instantly across the long pinned hero
+links.forEach((l) =>
+  l.addEventListener('click', (e) => {
+    setMenu(false);
+    const t = document.querySelector(l.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    const far = Math.abs(t.getBoundingClientRect().top) > innerHeight * 3;
+    t.scrollIntoView({ behavior: far ? 'auto' : 'smooth' });
+  })
+);
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') setMenu(false);
 });
@@ -17,15 +35,15 @@ document.addEventListener('click', (e) => {
   if (!bar.contains(e.target)) setMenu(false);
 });
 
-let lastY = window.scrollY;
+let lastScrollY = window.scrollY;
 window.addEventListener(
   'scroll',
   () => {
     const y = window.scrollY;
     bar.classList.toggle('scrolled', y > 10);
-    if (Math.abs(y - lastY) > 6) {
-      bar.classList.toggle('hide', y > lastY && y > 120 && !bar.classList.contains('open'));
-      lastY = y;
+    if (Math.abs(y - lastScrollY) > 6) {
+      bar.classList.toggle('hide', y > lastScrollY && y > 120 && !bar.classList.contains('open'));
+      lastScrollY = y;
     }
   },
   { passive: true }
@@ -51,6 +69,7 @@ links.forEach((l) => {
   if (t) spy.observe(t);
 });
 
+/* ============ Hero image: hover lens reveal ============ */
 (() => {
   const box = document.getElementById('heroImage');
   const lens = box.querySelector('.lens');
@@ -59,15 +78,7 @@ links.forEach((l) => {
   const STIFF = 180;
   const DAMP = 17;
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let x = 0,
-    y = 0,
-    tx = 0,
-    ty = 0,
-    r = 0,
-    vr = 0,
-    tr = 0,
-    raf = 0,
-    last = 0;
+  let x = 0, y = 0, tx = 0, ty = 0, r = 0, vr = 0, tr = 0, raf = 0, last = 0;
 
   lens.style.width = lens.style.height = R * 2 + 'px';
 
@@ -76,10 +87,7 @@ links.forEach((l) => {
     last = now;
 
     if (calm) {
-      x = tx;
-      y = ty;
-      r = tr;
-      vr = 0;
+      x = tx; y = ty; r = tr; vr = 0;
     } else {
       const k = 1 - Math.exp(-dt * FOLLOW);
       x += (tx - x) * k;
@@ -97,15 +105,10 @@ links.forEach((l) => {
 
     const busy = Math.abs(tx - x) + Math.abs(ty - y) + Math.abs(tr - r) + Math.abs(vr) > 0.05;
     if (busy) raf = requestAnimationFrame(draw);
-    else {
-      raf = 0;
-      last = 0;
-    }
+    else { raf = 0; last = 0; }
   };
 
-  const kick = () => {
-    if (!raf) raf = requestAnimationFrame(draw);
-  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(draw); };
 
   const aim = (e) => {
     const b = box.getBoundingClientRect();
@@ -113,28 +116,17 @@ links.forEach((l) => {
     ty = e.clientY - b.top;
   };
 
-  box.addEventListener('pointerenter', (e) => {
-    aim(e);
-    x = tx;
-    y = ty;
-    tr = R;
-    kick();
-  });
-
-  box.addEventListener('pointermove', (e) => {
-    aim(e);
-    kick();
-  });
-
-  box.addEventListener('pointerleave', () => {
-    tr = 0;
-    kick();
-  });
+  box.addEventListener('pointerenter', (e) => { aim(e); x = tx; y = ty; tr = R; kick(); });
+  box.addEventListener('pointermove', (e) => { aim(e); kick(); });
+  box.addEventListener('pointerleave', () => { tr = 0; kick(); });
 })();
 
+/* ============ Section effects: reveals, marquee, parallax, stacked cards, contact ============ */
 (() => {
-  const EMAIL = 'yourname@email.com';
+  const EMAIL = 'nworieugochukwu123@gmail.com';
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Project cards only pin/stack when a whole card fits on screen (mirrors the CSS media query)
+  const stackMQ = matchMedia('(min-width: 821px) and (min-height: 720px)');
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
   document.querySelectorAll('[data-split]').forEach((el) => {
@@ -171,7 +163,7 @@ links.forEach((l) => {
 
   document.querySelectorAll('[data-reveal], [data-split]').forEach((el) => io.observe(el));
 
-  const bar = document.getElementById('progress');
+  const progress = document.getElementById('progress');
   const track = document.getElementById('track');
   track.innerHTML += track.innerHTML;
   const pars = [...document.querySelectorAll('[data-par]')];
@@ -185,7 +177,7 @@ links.forEach((l) => {
     const y = scrollY;
     vel += (y - lastY - vel) * 0.1;
     lastY = y;
-    bar.style.transform = `scaleX(${y / Math.max(1, document.documentElement.scrollHeight - innerHeight)})`;
+    progress.style.transform = `scaleX(${y / Math.max(1, document.documentElement.scrollHeight - innerHeight)})`;
 
     if (!calm) {
       const half = track.scrollWidth / 2;
@@ -202,7 +194,7 @@ links.forEach((l) => {
         const next = projs[i + 1];
         if (!next) return;
         const t = next.getBoundingClientRect().top;
-        const k = clamp((innerHeight * 0.9 - t) / (innerHeight * 0.9 - 120), 0, 1);
+        const k = stackMQ.matches ? clamp((innerHeight * 0.9 - t) / (innerHeight * 0.9 - 120), 0, 1) : 0;
         p.firstElementChild.style.setProperty('--s', 1 - 0.06 * k);
         p.firstElementChild.style.setProperty('--b', 1 - 0.45 * k);
       });
@@ -211,8 +203,10 @@ links.forEach((l) => {
     requestAnimationFrame(frame);
   })();
 
+  // Tilt + magnet are mouse-only so they never fight touch scrolling
   document.querySelectorAll('.pin').forEach((el) => {
     el.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
       const r = el.getBoundingClientRect();
       el.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 8 + 'deg');
       el.style.setProperty('--rx', -((e.clientY - r.top) / r.height - 0.5) * 8 + 'deg');
@@ -225,6 +219,7 @@ links.forEach((l) => {
 
   document.querySelectorAll('[data-magnet]').forEach((b) => {
     b.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
       const r = b.getBoundingClientRect();
       b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px, ${(e.clientY - r.top - r.height / 2) * 0.35}px)`;
     });
@@ -243,15 +238,14 @@ links.forEach((l) => {
   document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
+/* ============ Hero 3D scene ============ */
 const stage = document.getElementById('stage');
 
+// Lighter rendering on touch devices keeps scrolling smooth
+const coarse = matchMedia('(pointer: coarse)').matches;
+
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(devicePixelRatio, coarse ? 1.5 : 2));
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -276,6 +270,7 @@ controls.maxPolarAngle = Math.PI / 2 - 0.03;
 controls.autoRotate = false;
 renderer.domElement.style.touchAction = 'pan-y';
 
+/* ---- Pen (own scene rendered on top) ---- */
 const penScene = new THREE.Scene();
 penScene.environment = scene.environment;
 const penCam = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
@@ -347,13 +342,8 @@ const penRig = (() => {
 const PEN_HALF_H = 9 * Math.tan(THREE.MathUtils.degToRad(20));
 const CORNER = { dx: 0.30, dy: 0.20, shrink: 0.4 };
 const LAND_GAP = 0.025;
-let penRestX = 0,
-  penRestY = 0,
-  penStartY = 6,
-  penScaleRest = 0.45;
-let penLandX = 0,
-  penLandY = 0,
-  penScaleLand = 0.2;
+let penRestX = 0, penRestY = 0, penStartY = 6, penScaleRest = 0.45;
+let penLandX = 0, penLandY = 0, penScaleLand = 0.2;
 
 const penShadow = new THREE.Mesh(
   new THREE.PlaneGeometry(1, 1),
@@ -410,9 +400,7 @@ function layoutPen() {
   penLandY = (0.5 - laptopY) * unitsY;
 }
 
-let baseZoom = 1,
-  stageW = 1,
-  stageH = 1;
+let baseZoom = 1, stageW = 1, stageH = 1;
 
 function resize() {
   const w = stage.clientWidth;
@@ -431,10 +419,11 @@ function resize() {
 new ResizeObserver(resize).observe(stage);
 resize();
 
+/* ---- Lights + floor ---- */
 const keyLight = new THREE.DirectionalLight(0xffffff, 2.2);
 keyLight.position.set(4, 7, 5);
 keyLight.castShadow = true;
-keyLight.shadow.mapSize.set(2048, 2048);
+keyLight.shadow.mapSize.set(coarse ? 1024 : 2048, coarse ? 1024 : 2048);
 Object.assign(keyLight.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 20 });
 keyLight.shadow.bias = -0.0004;
 keyLight.shadow.normalBias = 0.02;
@@ -453,6 +442,7 @@ floor.rotation.x = -Math.PI / 2;
 floor.receiveShadow = true;
 scene.add(floor);
 
+/* ---- Laptop ---- */
 const alu = new THREE.MeshStandardMaterial({ color: 0xc8cbd0, metalness: 1, roughness: 0.32 });
 const darkMetal = new THREE.MeshStandardMaterial({ color: 0x3a3d44, metalness: 1, roughness: 0.4 });
 const black = new THREE.MeshStandardMaterial({ color: 0x08090a, roughness: 0.4, metalness: 0.2 });
@@ -460,9 +450,7 @@ const keyMat = new THREE.MeshStandardMaterial({ color: 0x15171a, roughness: 0.55
 const padMat = new THREE.MeshStandardMaterial({ color: 0xb7bbc1, metalness: 0.9, roughness: 0.25 });
 const rubber = new THREE.MeshStandardMaterial({ color: 0x0c0c0d, roughness: 0.9 });
 
-const W = 3.2,
-  D = 2.2,
-  BH = 0.14;
+const W = 3.2, D = 2.2, BH = 0.14;
 const laptop = new THREE.Group();
 laptop.position.y = 0.03;
 scene.add(laptop);
@@ -483,8 +471,7 @@ well.rotation.x = -Math.PI / 2;
 well.position.set(0, BH + 0.001, -0.38);
 laptop.add(well);
 
-const pitch = 0.2,
-  ks = 0.17;
+const pitch = 0.2, ks = 0.17;
 const keyList = [];
 for (let i = 0; i < 14; i++) keyList.push({ x: (i - 6.5) * pitch, z: -0.8, w: ks, d: 0.1 });
 [-0.6, -0.4, -0.2].forEach((z) => {
@@ -543,6 +530,7 @@ logo.rotation.x = -Math.PI / 2;
 logo.position.set(0, 0.1115, lidZ);
 hinge.add(logo);
 
+/* ---- Laptop screen (canvas texture) ---- */
 const cv = document.createElement('canvas');
 cv.width = 1280;
 cv.height = 800;
@@ -680,10 +668,10 @@ function drawScreen(t) {
 
 drawScreen(0);
 
+/* ---- Scroll-driven timeline ---- */
 const OPEN = THREE.MathUtils.degToRad(108);
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
-let target = 0,
-  amount = 0;
+let target = 0, amount = 0;
 
 setTimeout(() => {
   target = 1;
@@ -714,6 +702,9 @@ const bounceOut = (x) => {
 };
 const TAU = Math.PI * 2;
 const TEXT_SWAPS = [[36, 84], [174, 222], [348, 390], [468, 510], [640, 690]];
+// The timeline always runs over 740 units; the track height in CSS can change freely
+// (desktop 840svh, phones 600svh) and the animation just stretches/compresses to fit.
+const TIMELINE = 740;
 
 let visible = true;
 new IntersectionObserver(([e]) => {
@@ -728,11 +719,11 @@ renderer.setAnimationLoop(() => {
   if (!visible) return;
   const now = clock.elapsedTime;
 
+  // Use the stage height (svh-based, stable) instead of innerHeight, which jumps with the mobile URL bar
   const rect = track.getBoundingClientRect();
-  const p = clamp01(-rect.top / Math.max(1, rect.height - innerHeight));
+  const p = clamp01(-rect.top / Math.max(1, rect.height - stageH));
   prog = prog === null ? p : prog + (p - prog) * (1 - Math.exp(-dt * 10));
-  const rangeVh = Math.max(1, (rect.height - innerHeight) / innerHeight * 100);
-  const win = (a, b) => smooth(a, b, prog * rangeVh);
+  const win = (a, b) => smooth(a, b, prog * TIMELINE);
 
   const move = win(90, 246);
   const tp = TEXT_SWAPS.reduce((sum, [a, b]) => sum + win(a, b), 0);
@@ -757,7 +748,7 @@ renderer.setAnimationLoop(() => {
   screenMat.color.setScalar(brightness);
   glow.intensity = 1.5 * brightness;
 
-  if (brightness > 0.01 && now - lastDraw > 0.066) {
+  if (brightness > 0.01 && now - lastDraw > (coarse ? 0.1 : 0.066)) {
     drawScreen(now);
     lastDraw = now;
   }
@@ -791,6 +782,7 @@ renderer.setAnimationLoop(() => {
   }
 });
 
+/* ---- Click the pen to toggle its tip ---- */
 const penRay = new THREE.Raycaster(), penPtr = new THREE.Vector2();
 let penDown = null;
 renderer.domElement.addEventListener('pointerdown', (e) => {
