@@ -229,11 +229,6 @@ links.forEach((l) => {
   });
 
   document.getElementById('mail').href = 'mailto:' + EMAIL;
-  document.getElementById('form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const f = new FormData(e.target);
-    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Enquiry from ' + f.get('name'))}&body=${encodeURIComponent(f.get('message') + '\n\n' + f.get('name') + ' (' + f.get('email') + ')')}`;
-  });
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 })();
@@ -795,3 +790,44 @@ renderer.domElement.addEventListener('pointerup', (e) => {
   penRay.setFromCamera(penPtr, penCam);
   if (penRay.intersectObject(penRig.holder, true).length) tipOut = !tipOut;
 });
+
+
+(function () {
+  const form = document.getElementById('form');
+  if (!form) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  const status = document.getElementById('form-status');
+  if (!button || !status) {
+    throw new Error('The contact form is missing its submit button or status message.');
+  }
+
+  const buttonText = button.textContent;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.textContent = '';
+
+    if (form.elements.website.value.trim()) return;
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    form.setAttribute('aria-busy', 'true');
+
+    try {
+      if (!window.emailjs || typeof window.emailjs.sendForm !== 'function') {
+        throw new Error('EmailJS did not load.');
+      }
+      await window.emailjs.sendForm('service_ze6m07b', 'template_mkv2vxh', form);
+      form.reset();
+      status.textContent = 'Email sent. I will get back to you shortly.';
+    } catch (error) {
+      console.error('EmailJS enquiry failed:', error);
+      status.textContent = 'Your message could not be sent. Please try again or email me directly.';
+    } finally {
+      button.disabled = false;
+      button.textContent = buttonText;
+      form.removeAttribute('aria-busy');
+    }
+  });
+})();

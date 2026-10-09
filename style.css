@@ -324,6 +324,10 @@ form input, form textarea {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 form input:focus, form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.18); }
+.form-status { min-height: 1.5em; margin: 14px 0 0; color: #b3b9c6; }
+.form-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.form-trap input { position: absolute; left: -10000px; }
+form button:disabled { cursor: wait; opacity: 0.7; }
 
 .contact-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
 .social-link {

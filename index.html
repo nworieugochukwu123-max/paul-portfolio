@@ -170,11 +170,13 @@
           </div>
           <a class="cta" id="mail" data-magnet href="mailto:nworieugochukw123@gmail.com">Say hello ↗</a>
         </div>
-        <form class="card" id="form" data-reveal="right">
-          <label for="n">Your name</label><input id="n" name="name" required>
-          <label for="e">Your email</label><input id="e" name="email" type="email" required>
-          <label for="m">How can I help?</label><textarea id="m" name="message" rows="4" required></textarea>
+        <form class="card" id="form" data-emailjs-form data-reveal="right">
+          <label for="contact-name">Your name</label><input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+          <label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          <label for="contact-message">How can I help?</label><textarea id="contact-message" name="message" rows="4" maxlength="5000" required></textarea>
+          <label class="form-trap" aria-hidden="true">Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label>
           <button class="cta" type="submit" data-magnet>Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
       <p class="foot">© <span id="yr"></span> Nworie Paul Ugochukwu · Frontend web developer &amp; resume / CV writer</p>
@@ -188,6 +190,10 @@
     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
   }
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init({ publicKey: "-MGqkdJtU0IfAsueo" });
 </script>
 <script type="module" src="script.js"></script>
 </body>
