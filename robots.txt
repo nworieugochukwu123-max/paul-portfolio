@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nworieugochukwu123-max.github.io/paul-portfolio/sitemap.xml

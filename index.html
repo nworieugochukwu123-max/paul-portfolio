@@ -3,7 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paul.dev</title>
+<title>Nworie Paul Ugochukwu | Frontend Developer & Resume Writer</title>
+<meta name="description" content="Portfolio of Nworie Paul Ugochukwu, a frontend web developer and resume/CV writer building responsive websites and ATS-friendly career documents.">
+<meta name="author" content="Nworie Paul Ugochukwu">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0c4b86">
+<link rel="canonical" href="https://nworieugochukwu123-max.github.io/paul-portfolio/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Paul.dev">
+<meta property="og:title" content="Nworie Paul Ugochukwu | Frontend Developer & Resume Writer">
+<meta property="og:description" content="Responsive websites, interactive frontend experiences, and ATS-friendly resumes and CVs.">
+<meta property="og:url" content="https://nworieugochukwu123-max.github.io/paul-portfolio/">
+<meta property="og:image" content="https://nworieugochukwu123-max.github.io/paul-portfolio/images/me.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nworie Paul Ugochukwu | Frontend Developer & Resume Writer">
+<meta name="twitter:description" content="Explore Paul.dev for frontend development projects and professional resume/CV writing.">
+<meta name="twitter:image" content="https://nworieugochukwu123-max.github.io/paul-portfolio/images/me.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nworie Paul Ugochukwu",
+  "url": "https://nworieugochukwu123-max.github.io/paul-portfolio/",
+  "image": "https://nworieugochukwu123-max.github.io/paul-portfolio/images/me.png",
+  "jobTitle": "Frontend Web Developer",
+  "email": "mailto:nworieugochukwu123@gmail.com",
+  "sameAs": [
+    "https://github.com/nworieugochukwu123-max",
+    "https://www.tiktok.com/@faaaaaaah248",
+    "https://wa.me/2348154681877"
+  ],
+  "knowsAbout": ["Frontend Development", "HTML", "CSS", "JavaScript", "React", "Three.js", "Resume Writing", "CV Writing"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Paul.dev",
+  "url": "https://nworieugochukwu123-max.github.io/paul-portfolio/",
+  "description": "Frontend web development and resume/CV writing portfolio by Nworie Paul Ugochukwu.",
+  "inLanguage": "en"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +70,7 @@ body { margin: 0; font-family: var(--font-body); background: var(--hero-bg); ove
 body, button, input, textarea { font-family: var(--font-body); }
 section { color: #fff; }
 section[id] { scroll-margin-top: calc(var(--nav-h) + 20px); }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ---------- Loader: PAUL.DEV fills with aqua as it counts, then the screen splits open ---------- */
 body.is-loading { overflow: hidden; }
@@ -76,7 +122,7 @@ body.is-loading { overflow: hidden; }
 }
 
 /* ---------- Hero: giant PAUL.DEV behind the laptop ---------- */
-.hero-track { height: 520vh; height: 520svh; margin-top: calc(-1 * (var(--nav-h) + 20px)); }
+.hero-track { height: 400vh; height: 400svh; margin-top: calc(-1 * (var(--nav-h) + 20px)); }
 .hero { position: sticky; top: 0; height: 100vh; height: 100svh; padding: 0; overflow: hidden; background: #000; }
 .word {
   position: absolute; z-index: 0; left: 0; right: 0; bottom: 27%; margin: 0;
@@ -93,18 +139,13 @@ body.is-loading { overflow: hidden; }
 .word .b { transform: translateX(calc(var(--k, 0) * 5vw)); }
 .dot { flex: none; width: 0.17em; height: 0.12em; margin: 0 0.05em 0.06em; border: 3px solid var(--accent); border-radius: 50%; box-shadow: 0 0 14px var(--accent), inset 0 0 10px rgba(0, 255, 255, 0.4); }
 /* Hover over the whole hero: a flashlight fills the letters, a soft white spotlight follows, letters drift with the cursor */
-.hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle calc(var(--hr, 0px) * 1.7) at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.07) 0, rgba(255, 255, 255, 0.035) 40%, transparent 100%); }
-.word-fill { position: absolute; inset: 0; z-index: 0; pointer-events: none; -webkit-mask-image: radial-gradient(circle var(--hr, 0px) at var(--mx, 50%) var(--my, 50%), #000 0, #000 30%, rgba(0, 0, 0, 0.85) 46%, rgba(0, 0, 0, 0.5) 64%, rgba(0, 0, 0, 0.18) 82%, transparent 100%); mask-image: radial-gradient(circle var(--hr, 0px) at var(--mx, 50%) var(--my, 50%), #000 0, #000 30%, rgba(0, 0, 0, 0.85) 46%, rgba(0, 0, 0, 0.5) 64%, rgba(0, 0, 0, 0.18) 82%, transparent 100%); }
+.word-fill { position: absolute; inset: 0; z-index: 0; pointer-events: none; -webkit-mask-image: linear-gradient(transparent, transparent); mask-image: linear-gradient(transparent, transparent); }
+.spot { position: absolute; left: 0; top: 0; z-index: 0; width: 1000px; height: 1000px; margin: -500px 0 0 -500px; border-radius: 50%; background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035) 40%, transparent 100%); opacity: 0; pointer-events: none; will-change: transform, opacity; }
 .word-fill .word { color: var(--accent); -webkit-text-stroke: 0; filter: none; text-shadow: 0 0 0.05em rgba(0, 255, 255, 0.55); }
 .word-fill .dot { background: var(--accent); }
 .stage { position: absolute; inset: 0; z-index: 1; }
 .stage canvas { display: block; width: 100%; height: 100%; }
-.hero-title { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 64px; margin: 0; color: #c6cbd6; text-align: center; font-size: clamp(1rem, 1.8vw, 1.5rem); font-weight: 600; letter-spacing: -0.01em; pointer-events: none; display: grid; }
-.t { grid-area: 1 / 1; opacity: 0; will-change: opacity, transform, filter; }
-.t1 { opacity: 1; }
-.hero-ui { position: absolute; z-index: 2; left: 0; right: 0; bottom: 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; pointer-events: none; }
-.hint { color: #8b8f98; font-size: 13px; letter-spacing: 0.04em; }
-@media (max-width: 820px) { .hero-track { height: 420vh; height: 420svh; } }
+@media (max-width: 820px) { .hero-track { height: 340vh; height: 340svh; } }
 @media (max-width: 820px) and (orientation: portrait) {
   .word { flex-wrap: wrap; bottom: 40%; font-size: min(44vw, 22vh); font-size: min(44vw, 22svh); transform: scaleY(1.15); }
   .word .a { flex: 0 0 100%; text-align: center; }
@@ -166,22 +207,50 @@ body.is-loading { overflow: hidden; }
 .badge { position: absolute; right: -10px; bottom: -16px; padding: 10px 16px; border-radius: 999px; font-weight: 700; background: var(--accent); color: var(--ink-on-accent); box-shadow: 0 0 24px var(--accent); transform: scale(0) rotate(-12deg); transition: transform 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) 2s; }
 .cv.in .badge { transform: scale(1) rotate(-6deg); }
 
-/* ---------- Projects ---------- */
-.proj { position: sticky; top: calc(96px + var(--i) * 18px); padding-bottom: 36px; }
-.pin { display: grid; grid-template-columns: 1.1fr 1fr; min-height: min(62vh, 520px); overflow: hidden; border-radius: 28px; background: #181b22; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); transform-origin: 50% 0; transition: transform 0.15s ease-out; transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--s, 1)); filter: brightness(var(--b, 1)); }
-.viz { display: grid; place-items: center; font-size: clamp(5rem, 14vw, 11rem); font-weight: 800; color: rgba(255, 255, 255, 0.9); }
+/* ---------- Projects: cards twist in, hold, then flow out, stretching like rubber with the scroll ---------- */
+.flow-track { height: 560vh; height: 560svh; margin: 0 calc(-1 * clamp(20px, 6vw, 90px)); }
+.flow { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; perspective: 1400px; }
+.flow-count { position: absolute; left: clamp(20px, 6vw, 90px); top: 100px; z-index: 30; margin: 0; color: var(--accent); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.3em; }
+.flow-ghost { position: absolute; left: 50%; top: 50%; z-index: 0; transform: translate(-50%, -50%); font-family: "Anton", "Impact", sans-serif; font-size: min(46vw, 80vh); line-height: 1; color: transparent; -webkit-text-stroke: 2px rgba(255, 255, 255, 0.07); pointer-events: none; user-select: none; }
+.proj { position: absolute; left: 50%; top: 50%; z-index: 5; width: min(980px, 90vw); opacity: 0; visibility: hidden; will-change: transform, opacity; }
+
+.pin { --mx: 50%; --my: 50%; position: relative; display: grid; grid-template-columns: 1.1fr 1fr; min-height: min(60vh, 480px); overflow: hidden; border-radius: 28px; background: #16181d; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); will-change: transform; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.pin::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; background: radial-gradient(circle 260px at var(--mx) var(--my), rgba(255, 255, 255, 0.14), transparent 65%); }
+.pin:hover { border-color: var(--accent); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6), 0 0 44px rgba(0, 255, 255, 0.18); }
+.pin:hover::after { opacity: 1; }
+
+.viz { display: grid; place-items: center; font-size: clamp(5rem, 14vw, 11rem); font-weight: 800; color: rgba(255, 255, 255, 0.9); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease; }
+.pin:hover .viz { transform: scale(1.07); filter: saturate(1.2) contrast(1.05); }
 .v1 { background-image: url('./images/Chukscollections.png'); background-size: cover; background-position: center; }
 .v2 { background-image: url('./images/Devs.png'); background-size: cover; background-position: center; }
 .v3 { background-image: url('./images/steelbottle.png'); background-size: cover; background-position: center; }
-.v4 { background: var(--accent); }
-.info { display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: clamp(24px, 4vw, 48px); }
+.v4 { background: var(--accent); color: var(--ink-on-accent); }
+.v5 { background: #ff8a00; }
+.v6 { background: #ff5d5d; }
+.v7 { background: #1dbf73; }
+.v8 { background: #f4f6fb; }
+.v9 { background: #f7df1e; }
+.v10 { background: #38d9a9; }
+.v11 { background: #adb5bd; }
+
+.info { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: clamp(24px, 4vw, 48px); background: #16181d; }
+.num { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em; }
 .info h3 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.3rem); }
 .info p { margin: 0; color: #b3b9c6; line-height: 1.7; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags span { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.8rem; }
-.link { color: var(--accent); font-weight: 600; text-decoration: none; }
-.link:hover { text-decoration: underline; }
-@media (max-width: 820px) { .pin { grid-template-columns: 1fr; } .viz { min-height: 150px; font-size: 5rem; } }
+.tags span { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.8rem; transition: transform 0.35s cubic-bezier(0.22, 1.4, 0.36, 1), border-color 0.3s ease, color 0.3s ease; }
+.pin:hover .tags span { transform: translateY(-4px); border-color: var(--accent); color: var(--accent); }
+.pin:hover .tags span:nth-child(2) { transition-delay: 0.05s; }
+.pin:hover .tags span:nth-child(3) { transition-delay: 0.1s; }
+.link { display: inline-block; align-self: flex-start; color: var(--accent); font-weight: 600; text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 1.4, 0.36, 1), letter-spacing 0.35s ease; }
+.link:hover { transform: translateX(10px); letter-spacing: 0.04em; }
+@media (max-width: 820px) { .pin { grid-template-columns: 1fr; min-height: 0; } .viz { min-height: 150px; font-size: 5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .flow-track { height: auto; }
+  .flow { position: static; height: auto; overflow: visible; perspective: none; padding: 0 clamp(20px, 6vw, 90px); }
+  .flow-count, .flow-ghost { display: none; }
+  .proj { position: relative; left: auto; top: auto; opacity: 1; visibility: visible; width: auto; margin-bottom: 24px; transform: none !important; }
+}
 
 /* ---------- Contact ---------- */
 form label { display: block; margin: 14px 0 6px; font-size: 0.85rem; color: #9aa3b2; }
@@ -275,21 +344,14 @@ form button:disabled { cursor: wait; opacity: 0.7; }
     </nav>
   </header>
 
+  <main>
   <!-- ===== Hero: giant PAUL.DEV behind the laptop ===== -->
   <div class="hero-track" id="home">
   <section class="hero" id="hero">
-    <h1 class="word" aria-label="Paul.dev"><span class="a" aria-hidden="true">PAUL</span><i class="dot" aria-hidden="true"></i><span class="b" aria-hidden="true">DEV</span></h1>
+    <div class="spot" id="spot" aria-hidden="true"></div>
+    <h1 class="word" aria-label="Nworie Paul Ugochukwu - Frontend Web Developer"><span class="sr-only">Nworie Paul Ugochukwu - Frontend Web Developer</span><span class="a" aria-hidden="true">PAUL</span><i class="dot" aria-hidden="true"></i><span class="b" aria-hidden="true">DEV</span></h1>
     <div class="word-fill" aria-hidden="true"><div class="word"><span class="a">PAUL</span><i class="dot"></i><span class="b">DEV</span></div></div>
     <div class="stage" id="stage"></div>
-    <p class="hero-title" aria-label="I write a lot of code. I’m a web developer. I make websites look out of this world. I write resumes. I also write CVs. Get you sitting in an interview.">
-      <span class="t t1" aria-hidden="true">I write a lot of code.</span>
-      <span class="t t2" aria-hidden="true">I’m a web developer.</span>
-      <span class="t t3" aria-hidden="true">I make websites look out of this world.</span>
-      <span class="t t4" aria-hidden="true">I write resumes.</span>
-      <span class="t t5" aria-hidden="true">I also write CVs.</span>
-      <span class="t t6" aria-hidden="true">Get you sitting in an interview.</span>
-    </p>
-    <div class="hero-ui"><div class="hint">Scroll to Discover</div></div>
   </section>
   </div>
 
@@ -301,14 +363,14 @@ form button:disabled { cursor: wait; opacity: 0.7; }
       <div class="about-grid">
         <!-- Hover the portrait to reveal the hidden image under the cursor -->
         <div class="portrait" id="portrait" data-reveal="left">
-          <div class="layer back"><img src="./images/spider.png" alt=""></div>
-          <div class="layer front"><img src="./images/me.png" alt="Paul"></div>
+          <div class="layer back"><img src="./images/spider.png" alt="" loading="lazy"></div>
+          <div class="layer front"><img src="./images/me.png" alt="Portrait of Nworie Paul Ugochukwu" loading="lazy"></div>
           <div class="lens" aria-hidden="true"></div>
         </div>
         <div>
           <p class="lead" data-reveal="right">I’m a frontend web developer who builds fast, beautiful websites for real businesses — restaurants, car dealers, fashion stores and personal brands. I also write resumes and CVs that make hiring managers stop scrolling and start dialling.</p>
           <div class="cards">
-            <div class="card" data-reveal="right"><span class="ic">⌨️</span><h3>Frontend development</h3><p>Responsive, animated sites that feel as good as they look.</p></div>
+            <div class="card" data-reveal="right"><span class="ic">⌨️</span><h3>Frontend development</h3><p>Responsive, animated sites built with HTML, CSS, JavaScript, Three.js, React and Supabase.</p></div>
             <div class="card" data-reveal="right" style="--d:150"><span class="ic">📄</span><h3>Resume &amp; CV writing</h3><p>Clear, ATS-friendly documents that tell your story and get you noticed.</p></div>
           </div>
         </div>
@@ -322,9 +384,9 @@ form button:disabled { cursor: wait; opacity: 0.7; }
       <p class="eyebrow" data-reveal="up">Skills</p>
       <h2 class="big" data-split>Two crafts. One goal: make you look unforgettable.</h2>
     </div>
-    <div class="marquee" aria-hidden="true"><div class="track" id="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span><span>Responsive design</span><span>Scroll animations</span><span>Resumes</span><span>CVs</span></div></div>
+    <div class="marquee" aria-hidden="true"><div class="track" id="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Three.js</span><span>React</span><span>Supabase</span><span>Responsive design</span><span>Scroll animations</span><span>Resumes</span><span>CVs</span></div></div>
     <div class="wrap grid2">
-      <div class="card" data-reveal="left"><h3>Frontend development</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive design</li><li>Three.js</li><li>Scroll animations</li><li>UI design</li></ul></div>
+      <div class="card" data-reveal="left"><h3>Frontend development</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive design</li><li>Three.js</li><li>React</li><li>Supabase</li><li>Scroll animations</li><li>UI design</li></ul></div>
       <div class="card" data-reveal="right"><h3>Resume &amp; CV writing</h3><ul class="chips"><li>Resumes</li><li>CVs</li><li>ATS-friendly</li><li>Tailored to the role</li><li>Clear storytelling</li></ul>
         <div class="cv" data-reveal="zoom" style="--d:300"><div class="hd"><i class="av"></i>Your name here</div>
           <div class="ln" style="--w:92%;--i:0"></div><div class="ln" style="--w:70%;--i:1"></div><div class="ln" style="--w:84%;--i:2"></div><div class="ln" style="--w:55%;--i:3"></div><div class="ln" style="--w:78%;--i:4"></div>
@@ -338,13 +400,22 @@ form button:disabled { cursor: wait; opacity: 0.7; }
     <div class="wrap">
       <p class="eyebrow" data-reveal="up">Projects</p>
       <h2 class="big" data-split>Things I’ve built.</h2>
-      <div class="stack">
-        <article class="proj" style="--i:0"><div class="pin"><div class="viz v1"></div><div class="info"><h3>Chuks Collections</h3><p>A premium fashion storefront for a modern Nigerian brand, designed to feel elevated, easy to browse, and ready for conversions.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/Chuks-Collections-Abuja/">View project →</a></div></div></article>
-        <article class="proj" style="--i:1"><div class="pin"><div class="viz v2"></div><div class="info"><h3>Devs company Website</h3><p>A dark, three.js powered landing page for DEVs, a new company offering young tech talent a business opportunity.</p><div class="tags"><span>Responsive</span><span>3D</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/shere.dev/">View project →</a></div></div></article>
-        <article class="proj" style="--i:2"><div class="pin"><div class="viz v3"></div><div class="info"><h3>Ice & Steel</h3><p>An immersive scroll-driven 3D website where a rolling ice stone tumbles through falling snow and clouds, then the sky turns to a lightning storm and reveals a cold steel flask, beaded with condensation, that you can drag to rotate.</p><div class="tags"><span>3js</span><span>Mobile-first</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/bottle/">View project →</a></div></div></article>
-        <article class="proj" style="--i:3"><div class="pin"><div class="viz v4"></div><div class="info"><h3>Resumes &amp; CVs</h3><p>Tailored, ATS-friendly documents that put your best work forward and get you into the interview room.</p><div class="tags"><span>Resume</span><span>CV</span><span>ATS-friendly</span></div><a class="link" href="#contact">Get yours →</a></div></div></article>
-      </div>
     </div>
+    <div class="flow-track" id="flowTrack"><div class="flow" id="flow">
+      <p class="flow-count" id="flowCount" aria-hidden="true">01 / 04</p>
+      <div class="flow-ghost" id="flowGhost" aria-hidden="true">01</div>
+      <article class="proj"><div class="pin"><div class="viz v1"></div><div class="info"><span class="num">01</span><h3>Chuks Collections</h3><p>A premium fashion storefront for a modern Nigerian brand, designed to feel elevated, easy to browse, and ready for conversions.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/Chuks-Collections-Abuja/">View project →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v2"></div><div class="info"><span class="num">02</span><h3>Devs company Website</h3><p>A dark, three.js powered landing page for DEVs, a new company offering young tech talent a business opportunity.</p><div class="tags"><span>Responsive</span><span>3D</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/shere.dev/">View project →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v3"></div><div class="info"><span class="num">03</span><h3>Ice &amp; Steel</h3><p>An immersive scroll-driven 3D website where a rolling ice stone tumbles through falling snow and clouds, then the sky turns to a lightning storm and reveals a cold steel flask, beaded with condensation, that you can drag to rotate.</p><div class="tags"><span>3js</span><span>Mobile-first</span><span>Frontend</span></div><a class="link" href="https://nworieugochukwu123-max.github.io/bottle/">View project →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v5">🍽️</div><div class="info"><span class="num">04</span><h3>Restaurant Website</h3><p>A mouth-watering restaurant site with a menu, gallery and table booking that turns browsers into bookings.</p><div class="tags"><span>Responsive</span><span>Animation</span><span>Frontend</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v6">🚗</div><div class="info"><span class="num">05</span><h3>Car Dealership Website</h3><p>A fast inventory showcase for a car dealer, with clean listings and a one-tap WhatsApp enquiry on every car.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v7">🛍️</div><div class="info"><span class="num">06</span><h3>Online Store</h3><p>A smooth, mobile-first online store with a product grid, cart and checkout flow, built to convert.</p><div class="tags"><span>React</span><span>Supabase</span><span>Mobile-first</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v8">✨</div><div class="info"><span class="num">07</span><h3>Personal Brand Website</h3><p>A bold, story-driven site for a creator or consultant, with a standout hero, services and social proof.</p><div class="tags"><span>Three.js</span><span>Animation</span><span>Frontend</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v9">🏡</div><div class="info"><span class="num">08</span><h3>Real Estate Website</h3><p>A property listing site with filters, galleries and a clear contact path for serious buyers.</p><div class="tags"><span>React</span><span>Responsive</span><span>Frontend</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v10">📅</div><div class="info"><span class="num">09</span><h3>Booking App</h3><p>A booking and dashboard experience with sign-in and live data, powered by React and Supabase.</p><div class="tags"><span>React</span><span>Supabase</span><span>Auth</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v11">🚀</div><div class="info"><span class="num">10</span><h3>Launch Page</h3><p>A single-page launch site with scroll animations and a sharp call to action for a new product or event.</p><div class="tags"><span>Scroll animations</span><span>Responsive</span><span>Frontend</span></div><a class="link" href="#contact">Get one like this →</a></div></div></article>
+      <article class="proj"><div class="pin"><div class="viz v4">CV</div><div class="info"><span class="num">11</span><h3>Resumes &amp; CVs</h3><p>Tailored, ATS-friendly documents that put your best work forward and get you into the interview room.</p><div class="tags"><span>Resume</span><span>CV</span><span>ATS-friendly</span></div><a class="link" href="#contact">Get yours →</a></div></div></article>
+    </div></div>
   </section>
 
   <!-- ===== Contact ===== -->
@@ -357,15 +428,11 @@ form button:disabled { cursor: wait; opacity: 0.7; }
           <p class="lead">Need a website, a resume or a CV that gets you noticed? Tell me about it and I’ll get back to you.</p>
           <div class="contact-links" aria-label="Social media links">
             <a class="social-link tiktok" href="https://www.tiktok.com/@faaaaaaah248" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-            <a class="social-link linkedin" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a class="social-link whatsapp" href="https://wa.me/2348154681877" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a class="social-link github" href="https://github.com/nworieugochukwu123-max" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a class="social-link fiverr" href="https://www.fiverr.com/yourusername" target="_blank" rel="noreferrer" aria-label="Fiverr">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.7 8.3h2.3V5.6h-2.3c-2.9 0-4.4 1.5-4.4 3.7v1.5H8.5v2.4h1.8v6.2h2.9v-6.2h3.2v-2.4h-3.2V9.6c0-1.1.7-1.3 2.5-1.3zm-9.4 4.3h2.9v7.2H5.3v-7.2zm0-2.9h2.9V6.5H5.3v3.2z"/></svg>
-            </a>
             <a class="social-link email" href="mailto:nworieugochukwu123@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
-          <a class="cta" id="mail" data-magnet href="mailto:nworieugochukw123@gmail.com">Say hello ↗</a>
+          <a class="cta" id="mail" data-magnet href="mailto:nworieugochukwu123@gmail.com">Say hello ↗</a>
         </div>
         <form class="card" id="form" data-emailjs-form data-reveal="right">
           <label for="contact-name">Your name</label><input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
@@ -376,9 +443,10 @@ form button:disabled { cursor: wait; opacity: 0.7; }
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
-      <p class="foot">© <span id="yr"></span> Nworie Paul Ugochukwu · Frontend web developer &amp; resume / CV writer</p>
+      <footer class="foot">© <span id="yr"></span> Nworie Paul Ugochukwu · Frontend web developer &amp; resume / CV writer</footer>
     </div>
   </section>
+  </main>
 
 <script type="importmap">
 {
@@ -496,7 +564,6 @@ links.forEach((l) => {
 (() => {
   const EMAIL = 'nworieugochukwu123@gmail.com';
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const stackMQ = matchMedia('(min-width: 821px) and (min-height: 720px)');
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
   document.querySelectorAll('[data-split]').forEach((el) => {
@@ -530,11 +597,67 @@ links.forEach((l) => {
   const track = document.getElementById('track');
   track.innerHTML += track.innerHTML;
   const pars = [...document.querySelectorAll('[data-par]')];
-  const projs = [...document.querySelectorAll('.proj')];
 
-  let lastY = scrollY, vel = 0, x = 0;
+  // ----- Projects: cards twist in, hold, then flow out, and stretch like rubber with the scroll speed -----
+  const flowTrack = document.getElementById('flowTrack');
+  const flow = document.getElementById('flow');
+  const flowCount = document.getElementById('flowCount');
+  const flowGhost = document.getElementById('flowGhost');
+  const cards = [...flow.querySelectorAll('.proj')];
+  if (!calm) flowTrack.style.height = Math.round(cards.length * 120 + 100) + 'svh';
+  const easeOut = (v) => 1 - Math.pow(1 - v, 3);
+  const easeIn = (v) => v * v * v;
+  // springy settle: overshoots, then wobbles to rest
+  const elastic = (v) => (v <= 0 ? 0 : v >= 1 ? 1 : 1 - Math.pow(2, -10 * v) * Math.cos((v * 10 - 0.75) * ((2 * Math.PI) / 3)));
+  let fP = 0, shown = 0;
+  const jelly = { x: 0, v: 0 }; // a spring pushed by how fast the page scrolls
+
+  const updateFlow = (dt) => {
+    const r = flowTrack.getBoundingClientRect();
+    if (r.bottom < -100 || r.top > innerHeight + 100) return;
+    const H = flow.clientHeight, W = flow.clientWidth;
+    const target = clamp(-r.top / Math.max(1, r.height - H), 0, 1);
+    fP += (target - fP) * (1 - Math.exp(-dt * 9));
+    const push = clamp(vel * 0.05, -1.2, 1.2);
+    jelly.v += ((push - jelly.x) * 160 - jelly.v * 11) * dt;
+    jelly.x += jelly.v * dt;
+    const j = jelly.x;
+
+    const N = cards.length;
+    const u = fP * (N + 0.2);
+    let best = 0, bestW = -1;
+    cards.forEach((card, i) => {
+      const a = clamp((u - i) / 0.4, 0, 1);        // flowing in
+      const b = clamp((u - i - 0.8) / 0.4, 0, 1);  // flowing out
+      const ei = 1 - easeOut(a), eo = easeIn(b);
+      const stretchIn = 1 - elastic(a);
+      const tx = (ei - eo) * 0.55 * W;
+      const ty = (ei - eo) * 0.26 * H + j * 26;
+      const tz = -(ei + eo) * 320;
+      const sy = 1 + 0.55 * stretchIn - 0.2 * eo + 0.16 * Math.abs(j);
+      const sx = 1 - 0.1 * stretchIn + 0.5 * eo - 0.05 * Math.abs(j);
+      const op = clamp(a * 3, 0, 1) * (1 - clamp((b - 0.6) / 0.4, 0, 1));
+      card.style.transform = `translate(-50%, -50%) translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, ${tz.toFixed(1)}px) rotateX(${((ei - eo) * 25).toFixed(2)}deg) rotateY(${((eo - ei) * 80).toFixed(2)}deg) rotateZ(${((ei - eo) * 10).toFixed(2)}deg) skewY(${(j * 5).toFixed(2)}deg) scale(${sx.toFixed(3)}, ${sy.toFixed(3)})`;
+      card.style.opacity = op.toFixed(3);
+      card.style.visibility = op > 0.01 ? 'visible' : 'hidden';
+      card.style.pointerEvents = op > 0.6 && a > 0.75 && b < 0.25 ? 'auto' : 'none';
+      const w = Math.min(a, 1 - b);
+      if (w > bestW) { bestW = w; best = i; }
+    });
+    if (best + 1 !== shown) {
+      shown = best + 1;
+      const n = String(shown).padStart(2, '0');
+      flowCount.textContent = n + ' / ' + String(N).padStart(2, '0');
+      flowGhost.textContent = n;
+    }
+  };
+
+  let lastY = scrollY, vel = 0, x = 0, tPrev = performance.now();
 
   (function frame() {
+    const tNow = performance.now();
+    const dt = Math.min((tNow - tPrev) / 1000, 0.05);
+    tPrev = tNow;
     const y = scrollY;
     vel += (y - lastY - vel) * 0.1;
     lastY = y;
@@ -551,29 +674,70 @@ links.forEach((l) => {
         el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * el.dataset.par}px, 0)`;
       });
 
-      projs.forEach((p, i) => {
-        const next = projs[i + 1];
-        if (!next) return;
-        const t = next.getBoundingClientRect().top;
-        const k = stackMQ.matches ? clamp((innerHeight * 0.9 - t) / (innerHeight * 0.9 - 120), 0, 1) : 0;
-        p.firstElementChild.style.setProperty('--s', 1 - 0.06 * k);
-        p.firstElementChild.style.setProperty('--b', 1 - 0.45 * k);
-      });
+      updateFlow(dt);
     }
     requestAnimationFrame(frame);
   })();
 
   // Tilt + magnet are mouse-only so they never fight touch scrolling
-  document.querySelectorAll('.pin').forEach((el) => {
+  // Blobby hover: each card is soft jelly. It stretches toward the cursor, wobbles on springs
+  // and its outline keeps morphing while you hover. Leaving makes it jiggle back to shape.
+  const blobs = calm ? [] : [...document.querySelectorAll('.pin')].map((el) => ({ el, x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, h: 0, hv: 0, th: 0, on: false }));
+  let blobRaf = 0, blobLast = 0;
+  const SGX = [-1, 1, 1, -1], SGY = [-1, -1, 1, 1];
+  const blobFrame = (now) => {
+    blobRaf = 0;
+    const t = now / 1000;
+    const dt = blobLast ? Math.min(t - blobLast, 0.04) : 1 / 60;
+    blobLast = t;
+    let busy = false;
+    blobs.forEach((b) => {
+      b.vx += ((b.tx - b.x) * 170 - b.vx * 9) * dt; b.x += b.vx * dt;
+      b.vy += ((b.ty - b.y) * 170 - b.vy * 9) * dt; b.y += b.vy * dt;
+      b.hv += ((b.th - b.h) * 130 - b.hv * 10) * dt; b.h += b.hv * dt;
+      const rest = Math.abs(b.x) + Math.abs(b.y) + Math.abs(b.h) + Math.abs(b.vx) + Math.abs(b.vy) + Math.abs(b.hv) < 0.003;
+      if (rest && !b.on) {
+        if (b.el.style.transform) { b.el.style.transform = ''; b.el.style.borderRadius = ''; }
+        return;
+      }
+      busy = true;
+      const h = Math.max(b.h, 0);
+      const sx = clamp(1 + 0.05 * b.h + 0.1 * Math.abs(b.x) + 0.012 * Math.abs(b.vx) - 0.03 * Math.abs(b.y), 0.88, 1.3);
+      const sy = clamp(1 + 0.05 * b.h + 0.1 * Math.abs(b.y) + 0.012 * Math.abs(b.vy) - 0.03 * Math.abs(b.x), 0.88, 1.3);
+      b.el.style.transform = `perspective(1000px) translate3d(${(b.x * 14).toFixed(2)}px, ${(b.y * 10).toFixed(2)}px, 0) rotateX(${(-b.y * 7).toFixed(2)}deg) rotateY(${(b.x * 9).toFixed(2)}deg) scale(${sx.toFixed(3)}, ${sy.toFixed(3)})`;
+      const wob = (k) => h * (5 + 4 * Math.sin(t * 2.2 + k * 1.7));
+      const rx = SGX.map((sgx, i) => clamp(2.9 + wob(i) + 3 * b.x * sgx + 2 * b.y * SGY[i], 2, 16).toFixed(2) + '%');
+      const ry = SGY.map((sgy, i) => clamp(5.8 + wob(i + 4) + 4 * b.y * sgy + 3 * b.x * SGX[i], 3, 18).toFixed(2) + '%');
+      b.el.style.borderRadius = rx.join(' ') + ' / ' + ry.join(' ');
+    });
+    if (busy) kickBlob(); else blobLast = 0;
+  };
+  const kickBlob = () => { if (!blobRaf) blobRaf = requestAnimationFrame(blobFrame); };
+  blobs.forEach((b) => {
+    const el = b.el;
+    const aim = (e) => {
+      const r = el.parentElement.getBoundingClientRect(); // the outer card, so our own stretching does not feed back
+      const nx = (e.clientX - r.left) / r.width, ny = (e.clientY - r.top) / r.height;
+      b.tx = clamp((nx - 0.5) * 2, -1, 1);
+      b.ty = clamp((ny - 0.5) * 2, -1, 1);
+      el.style.setProperty('--mx', (nx * 100).toFixed(1) + '%');
+      el.style.setProperty('--my', (ny * 100).toFixed(1) + '%');
+    };
+    el.addEventListener('pointerenter', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      b.on = true; b.th = 1;
+      aim(e);
+      b.vx += b.tx * 3; b.vy += b.ty * 3; b.hv += 3; // a little pop as the cursor arrives
+      kickBlob();
+    });
     el.addEventListener('pointermove', (e) => {
       if (e.pointerType !== 'mouse') return;
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 8 + 'deg');
-      el.style.setProperty('--rx', -((e.clientY - r.top) / r.height - 0.5) * 8 + 'deg');
+      aim(e);
+      kickBlob();
     });
     el.addEventListener('pointerleave', () => {
-      el.style.setProperty('--rx', '0deg');
-      el.style.setProperty('--ry', '0deg');
+      b.on = false; b.th = 0; b.tx = 0; b.ty = 0;
+      kickBlob();
     });
   });
 
@@ -590,34 +754,68 @@ links.forEach((l) => {
   document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 
-/* ============ Hero hover: flashlight reveal, spotlight and parallax across the whole viewport ============ */
+/* ============ Hero hover: smooth flashlight that leaves a fading trail ============ */
 (() => {
   const h = document.getElementById('hero');
+  const fill = h.querySelector('.word-fill');
+  const spot = document.getElementById('spot');
+  const words = h.querySelectorAll('.word');
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const LIFE = 0.9;  // seconds a trail point takes to fade out
+  const MAXP = 24;   // most trail points alive at once
+  const EMPTY = 'linear-gradient(transparent, transparent)';
   let w = 1, ht = 1;
-  let x = 0, y = 0, tx = 0, ty = 0, r = 0, tr = 0, px = 0, py = 0, raf = 0, last = 0;
+  let x = 0, y = 0, tx = 0, ty = 0, r = 0, tr = 0, px = 0, py = 0, lx = 0, ly = 0, raf = 0, last = 0;
+  const pts = [];
 
   new ResizeObserver(() => { w = h.clientWidth || 1; ht = h.clientHeight || 1; }).observe(h);
 
-  // Easing is based on elapsed time, so it feels the same at 60, 90 or 144 fps
+  // Easing runs on elapsed time, so it feels the same at 60, 90 or 144 fps
   const ease = (rate, dt) => (calm ? 1 : 1 - Math.exp(-rate * dt));
+  const grad = (X, Y, R, A) =>
+    `radial-gradient(circle ${R.toFixed(1)}px at ${X.toFixed(1)}px ${Y.toFixed(1)}px, rgba(0,0,0,${A.toFixed(3)}) 0, rgba(0,0,0,${(A * 0.55).toFixed(3)}) 55%, transparent 100%)`;
+  const setMask = (m) => { fill.style.webkitMaskImage = m; fill.style.maskImage = m; };
 
   const frame = (now) => {
     raf = 0;
-    const dt = last ? Math.min((now - last) / 1000, 0.05) : 1 / 60;
-    last = now;
+    const t = now / 1000;
+    const dt = last ? Math.min(t - last, 0.05) : 1 / 60;
+    last = t;
     const tpx = (tx / w - 0.5) * 2, tpy = (ty / ht - 0.5) * 2;
-    x += (tx - x) * ease(11, dt);
-    y += (ty - y) * ease(11, dt);
-    r += (tr - r) * ease(5, dt);
+    x += (tx - x) * ease(14, dt);
+    y += (ty - y) * ease(14, dt);
+    r += (tr - r) * ease(6, dt);
     px += (tpx - px) * ease(4, dt);
     py += (tpy - py) * ease(4, dt);
-    h.style.setProperty('--mx', x.toFixed(2) + 'px');
-    h.style.setProperty('--my', y.toFixed(2) + 'px');
-    h.style.setProperty('--hr', r.toFixed(2) + 'px');
-    h.style.setProperty('--px', px.toFixed(4));
-    h.style.setProperty('--py', py.toFixed(4));
-    const busy = Math.abs(tx - x) + Math.abs(ty - y) + Math.abs(tr - r) + (Math.abs(tpx - px) + Math.abs(tpy - py)) * 100 > 0.25;
+
+    // Drop trail points along the path the light travelled this frame
+    if (!calm && tr > 0 && r > 20) {
+      const gap = Math.max(10, r * 0.16);
+      const dx = x - lx, dy = y - ly, dist = Math.hypot(dx, dy);
+      if (dist >= gap) {
+        const n = Math.min(10, Math.floor(dist / gap));
+        for (let i = 1; i <= n; i++) pts.push({ x: lx + (dx * i) / n, y: ly + (dy * i) / n, t });
+        lx = x; ly = y;
+      }
+    }
+    while (pts.length && (pts.length > MAXP || t - pts[0].t > LIFE)) pts.shift();
+
+    // Head of the light at full strength, then older points shrinking and fading behind it
+    const parts = [];
+    if (r > 1) parts.push(grad(x, y, r, 1));
+    for (let i = pts.length - 1; i >= 0; i--) {
+      const life = 1 - (t - pts[i].t) / LIFE;
+      if (life > 0) parts.push(grad(pts[i].x, pts[i].y, r * (0.3 + 0.7 * life), 0.9 * life * life));
+    }
+    setMask(parts.length ? parts.join(',') : EMPTY);
+
+    // Spotlight and letter drift only use transforms, so they stay on the GPU
+    spot.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${(r / 294).toFixed(3)})`;
+    spot.style.opacity = Math.min(1, r / 120).toFixed(3);
+    const drift = `${(-px * 1.4).toFixed(3)}vw ${(-py * 1.6).toFixed(3)}vh`;
+    words.forEach((el) => { el.style.translate = drift; });
+
+    const busy = pts.length > 0 || Math.abs(tx - x) + Math.abs(ty - y) + Math.abs(tr - r) + (Math.abs(tpx - px) + Math.abs(tpy - py)) * 100 > 0.25;
     if (busy) raf = requestAnimationFrame(frame);
     else last = 0;
   };
@@ -629,7 +827,7 @@ links.forEach((l) => {
   };
   const enter = (e) => {
     aim(e);
-    if (!tr) { x = tx; y = ty; tr = Math.max(220, Math.min(w, ht) * 0.34); }
+    if (!tr) { x = lx = tx; y = ly = ty; tr = Math.max(110, Math.min(w, ht) * 0.17); }
     kick();
   };
   const leave = () => { tr = 0; kick(); };
@@ -666,18 +864,21 @@ controls.enablePan = false;
 controls.maxPolarAngle = Math.PI / 2 - 0.03;
 renderer.domElement.style.touchAction = 'pan-y';
 
-let stageH = 1;
+let stageW = 1, stageH = 1, baseZoom = 1, shiftFrac = 0.1;
 function resize() {
   const w = stage.clientWidth;
   const h = stage.clientHeight;
   if (!w || !h) return;
+  stageW = w;
   stageH = h;
   renderer.setSize(w, h, false);
   const aspect = w / h;
   camera.aspect = aspect;
-  camera.zoom = Math.min(1, Math.max(0.45, aspect * 0.9));
+  baseZoom = Math.min(1, Math.max(0.45, aspect * 0.9));
+  shiftFrac = aspect < 0.8 ? 0.18 : 0.1;
+  camera.zoom = baseZoom;
   // Sit the laptop a little below centre, in front of the lower half of the letters
-  camera.setViewOffset(w, h, 0, -h * (aspect < 0.8 ? 0.18 : 0.1), w, h);
+  camera.setViewOffset(w, h, 0, -h * shiftFrac, w, h);
   camera.updateProjectionMatrix();
 }
 new ResizeObserver(resize).observe(stage);
@@ -855,8 +1056,8 @@ hinge.add(logo);
 
 /* ---- Laptop screen (canvas texture) ---- */
 const cv = document.createElement('canvas');
-cv.width = 1280;
-cv.height = 800;
+cv.width = 1920;
+cv.height = 1200;
 const g = cv.getContext('2d');
 
 const screenTex = new THREE.CanvasTexture(cv);
@@ -870,114 +1071,100 @@ screen.position.set(0, 0.0255, lidZ);
 hinge.add(screen);
 
 
-const code = [
-  "import * as THREE from 'three';",
-  '',
-  'const laptop = new THREE.Group();',
-  'laptop.add(base, keys, lid);',
-  '',
-  'function animate(t) {',
-  '  hinge.rotation.x = -Math.PI * 0.6;',
-  '  renderer.render(scene, camera);',
-  '  requestAnimationFrame(animate);',
-  '}',
-  'animate();',
-];
-const totalChars = code.join('\n').length;
+/* ---- What the laptop screen shows: the tech stack, drawn once ---- */
+const FONT = '"Manrope", "Segoe UI", sans-serif';
+const CW = 1920, CH = 1200;
 
-function rr(x, y, w, h, r) {
+function box(x, y, w, h, r, fill, stroke) {
   g.beginPath();
   g.roundRect(x, y, w, h, r);
+  g.fillStyle = fill;
   g.fill();
+  if (stroke) { g.strokeStyle = stroke; g.lineWidth = 2; g.stroke(); }
 }
 
-function drawScreen(t) {
-  g.fillStyle = '#17191e';
-  g.fillRect(0, 0, 1280, 800);
-  g.fillStyle = '#1d2026';
-  g.beginPath(); g.arc(1050, 720, 430, 0, Math.PI * 2); g.fill();
-  g.fillStyle = '#252932';
-  g.beginPath(); g.arc(1190, 800, 250, 0, Math.PI * 2); g.fill();
-  g.fillStyle = '#1a1d22';
-  g.beginPath(); g.arc(120, 60, 260, 0, Math.PI * 2); g.fill();
+// Simple vector versions of each logo, centred on (cx, cy) with half-size s
+const logos = {
+  HTML5(cx, cy, s) {
+    g.fillStyle = '#E34F26';
+    g.beginPath();
+    g.moveTo(cx - s, cy - s); g.lineTo(cx + s, cy - s); g.lineTo(cx + s * 0.85, cy + s * 0.75); g.lineTo(cx, cy + s); g.lineTo(cx - s * 0.85, cy + s * 0.75);
+    g.closePath(); g.fill();
+    g.fillStyle = '#ffffff'; g.font = `800 ${s * 1.2}px ${FONT}`; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillText('5', cx, cy + s * 0.05);
+  },
+  CSS3(cx, cy, s) {
+    g.fillStyle = '#1572B6';
+    g.beginPath();
+    g.moveTo(cx - s, cy - s); g.lineTo(cx + s, cy - s); g.lineTo(cx + s * 0.85, cy + s * 0.75); g.lineTo(cx, cy + s); g.lineTo(cx - s * 0.85, cy + s * 0.75);
+    g.closePath(); g.fill();
+    g.fillStyle = '#ffffff'; g.font = `800 ${s * 1.2}px ${FONT}`; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillText('3', cx, cy + s * 0.05);
+  },
+  JavaScript(cx, cy, s) {
+    g.fillStyle = '#F7DF1E';
+    g.fillRect(cx - s, cy - s, s * 2, s * 2);
+    g.fillStyle = '#000000'; g.font = `800 ${s * 0.95}px ${FONT}`; g.textAlign = 'right'; g.textBaseline = 'alphabetic';
+    g.fillText('JS', cx + s * 0.92, cy + s * 0.88);
+  },
+  'Three.js'(cx, cy, s) {
+    g.strokeStyle = '#ffffff'; g.lineWidth = s * 0.12; g.lineJoin = 'round'; g.lineCap = 'round';
+    const v = [0, 1, 2].map((i) => [cx + Math.cos(-Math.PI / 2 + (i * 2 * Math.PI) / 3) * s * 1.15, cy + 0.12 * s + Math.sin(-Math.PI / 2 + (i * 2 * Math.PI) / 3) * s * 1.15]);
+    g.beginPath(); v.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y))); g.closePath(); g.stroke();
+    g.beginPath(); v.forEach(([x, y]) => { g.moveTo(cx, cy + 0.12 * s); g.lineTo(x, y); }); g.stroke();
+  },
+  React(cx, cy, s) {
+    g.strokeStyle = '#61DAFB'; g.lineWidth = s * 0.1;
+    for (let i = 0; i < 3; i++) { g.beginPath(); g.ellipse(cx, cy, s * 1.15, s * 0.44, (i * Math.PI) / 3, 0, Math.PI * 2); g.stroke(); }
+    g.fillStyle = '#61DAFB'; g.beginPath(); g.arc(cx, cy, s * 0.17, 0, Math.PI * 2); g.fill();
+  },
+  Supabase(cx, cy, s) {
+    g.fillStyle = '#3ECF8E';
+    g.beginPath();
+    [[0.62, 0], [0, 0.58], [0.4, 0.58], [0.34, 1], [1, 0.38], [0.58, 0.38]].forEach(([px, py], i) => {
+      const x = cx + (px - 0.5) * 2 * s * 0.9, y = cy + (py - 0.5) * 2 * s;
+      if (i) g.lineTo(x, y); else g.moveTo(x, y);
+    });
+    g.closePath(); g.fill();
+  },
+};
 
-  g.fillStyle = 'rgba(10,14,20,0.55)';
-  g.fillRect(0, 0, 1280, 40);
-  g.fillStyle = '#e6e8ec';
-  g.beginPath(); g.arc(28, 20, 8, 0, Math.PI * 2); g.fill();
-  g.font = '600 18px system-ui, sans-serif';
-  g.textAlign = 'left';
-  g.textBaseline = 'middle';
-  g.fillText('Editor', 56, 21);
-  g.fillStyle = '#aeb6c4';
-  g.font = '18px system-ui, sans-serif';
-  g.fillText('File     Edit     View     Window', 130, 21);
-  g.textAlign = 'right';
-  g.fillStyle = '#e6e8ec';
-  g.fillText(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), 1250, 21);
-
-  g.fillStyle = '#0f1114';
-  rr(130, 90, 1020, 560, 16);
-  g.fillStyle = '#1b1e24';
-  rr(130, 90, 1020, 46, [16, 16, 0, 0]);
-  ['#ff5f57', '#febc2e', '#28c840'].forEach((c, i) => {
-    g.fillStyle = c;
-    g.beginPath(); g.arc(160 + i * 26, 113, 7, 0, Math.PI * 2); g.fill();
-  });
-  g.fillStyle = '#8a94a6';
-  g.textAlign = 'center';
-  g.font = '20px system-ui, sans-serif';
-  g.fillText('laptop.js', 640, 114);
-
+function drawScreen() {
+  g.fillStyle = '#121316';
+  g.fillRect(0, 0, CW, CH);
   g.textAlign = 'left';
   g.textBaseline = 'alphabetic';
-  g.font = '26px ui-monospace, Menlo, Consolas, monospace';
-  let left = Math.min(Math.floor(t * 28) % (totalChars + 60), totalChars);
-  let curX = 215;
-  let curY = 190;
-  for (let i = 0; i < code.length; i++) {
-    const y = 190 + i * 38;
-    const shown = code[i].slice(0, Math.max(0, left));
-    g.fillStyle = '#4b566a';
-    g.fillText(String(i + 1).padStart(2, ' '), 160, y);
-    let x = 215;
-    shown.split(/(\bimport\b|\bconst\b|\bnew\b|\bfunction\b|\bfrom\b|'[^']*'|\d+\.?\d*)/).forEach((part) => {
-      if (!part) return;
-      g.fillStyle = /^(import|const|new|function|from)$/.test(part)
-        ? '#c792ea'
-        : part[0] === "'"
-          ? '#c3e88d'
-          : /^\d/.test(part)
-            ? '#f78c6c'
-            : '#d6deeb';
-      g.fillText(part, x, y);
-      x += g.measureText(part).width;
-    });
-    curX = x;
-    curY = y;
-    left -= code[i].length + 1;
-    if (left < 0) break;
-  }
-  if (Math.floor(t * 2) % 2 === 0) {
-    g.fillStyle = '#7fb0ff';
-    g.fillRect(curX + 2, curY - 24, 3, 30);
-  }
 
-  const icons = ['#ff6b6b', '#ffa94d', '#ffd43b', '#69db7c', '#38d9a9', '#e9ecef', '#adb5bd', '#f783ac'];
-  const dockW = icons.length * 70 + 30;
-  const x0 = (1280 - dockW) / 2;
-  g.fillStyle = 'rgba(255,255,255,0.14)';
-  rr(x0, 702, dockW, 82, 22);
-  icons.forEach((c, i) => {
-    g.fillStyle = c;
-    rr(x0 + 20 + i * 70, 716, 54, 54, 14);
+  g.font = `600 26px ${FONT}`;
+  g.fillStyle = '#00ffff';
+  g.letterSpacing = '8px';
+  g.fillText('MY STACK', 150, 205);
+
+  g.font = `700 104px ${FONT}`;
+  g.fillStyle = '#ffffff';
+  g.letterSpacing = '-3px';
+  g.fillText('The tools I build with.', 150, 330);
+  g.letterSpacing = '0px';
+
+  Object.keys(logos).forEach((name, i) => {
+    const x = 150 + (i % 3) * 560;
+    const y = 450 + Math.floor(i / 3) * 340;
+    box(x, y, 500, 280, 30, 'rgba(255,255,255,0.05)', 'rgba(255,255,255,0.12)');
+    logos[name](x + 250, y + 112, 68);
+    g.fillStyle = '#ffffff';
+    g.font = `700 36px ${FONT}`;
+    g.textAlign = 'center';
+    g.textBaseline = 'alphabetic';
+    g.fillText(name, x + 250, y + 244);
   });
 
   screenTex.needsUpdate = true;
 }
-drawScreen(0);
+drawScreen();
+// Redraw once the web font is ready
+Promise.all(['600 30px Manrope', '700 30px Manrope'].map((f) => document.fonts.load(f))).then(drawScreen);
 
-/* ---- Scroll-driven timeline: laptop opens, spins once, tagline lines swap, letters part ---- */
+/* ---- Scroll-driven timeline: laptop opens, then the camera dives into the screen ---- */
 const OPEN = THREE.MathUtils.degToRad(108);
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
 let target = 0, amount = 0;
@@ -985,26 +1172,27 @@ const openLaptop = () => setTimeout(() => { target = 1; }, 450);
 if (document.body.classList.contains('is-loading')) window.addEventListener('loader:done', openLaptop, { once: true });
 else openLaptop();
 
+// Where the open screen sits in the world and which way it faces
+const hingeY = 0.03 + 0.16, hingeZ = -D / 2 + 0.03;
+const SCREEN_C = new THREE.Vector3(0, hingeY + 0.0255 * Math.cos(OPEN) + lidZ * Math.sin(OPEN), hingeZ - 0.0255 * Math.sin(OPEN) + lidZ * Math.cos(OPEN));
+const SCREEN_N = new THREE.Vector3(0, -Math.cos(OPEN), Math.sin(OPEN));
+
 const trackEl = document.getElementById('home');
 const hero = document.getElementById('hero');
-const lines = [...hero.querySelectorAll('.t')];
-const SPIN_TURNS = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1;
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (a, b, v) => {
   const t = clamp01((v - a) / (b - a));
   return t * t * (3 - 2 * t);
 };
-const TEXT_SWAPS = [[40, 90], [130, 180], [220, 270], [310, 360], [400, 450]];
 // The timeline always runs over 500 units; the track height in CSS can change freely.
 const TIMELINE = 500;
 let prog = null;
-let spin = 0;
+const camStart = new THREE.Vector3(), tgtStart = new THREE.Vector3(), camEnd = new THREE.Vector3();
 
 let visible = true;
 new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(stage);
 
 const clock = new THREE.Clock();
-let lastDraw = 0;
 
 renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 0.05);
@@ -1014,20 +1202,27 @@ renderer.setAnimationLoop(() => {
   const rect = trackEl.getBoundingClientRect();
   const p = clamp01(-rect.top / Math.max(1, rect.height - stageH));
   prog = prog === null ? p : prog + (p - prog) * (1 - Math.exp(-dt * 10));
-  const win = (a, b) => smooth(a, b, prog * TIMELINE);
+  const u = prog * TIMELINE;
 
-  const tp = TEXT_SWAPS.reduce((sum, [a, b]) => sum + win(a, b), 0);
-  lines.forEach((el, i) => {
-    const x = Math.max(-1, Math.min(1, tp - i));
-    const a = Math.abs(x);
-    el.style.opacity = (1 - a).toFixed(3);
-    el.style.transform = `translateY(${(-x * 0.4).toFixed(3)}em)`;
-    el.style.filter = a > 0.001 ? `blur(${(a * 10).toFixed(2)}px)` : 'none';
-  });
-  hero.style.setProperty('--k', prog.toFixed(3));
+  // the two halves of the word part a little as you scroll
+  hero.style.setProperty('--k', smooth(0, 300, u).toFixed(3));
 
-  spin += (win(30, 300) - spin) * (1 - Math.exp(-dt * 3.5));
-  laptop.rotation.y = spin * Math.PI * 2 * SPIN_TURNS;
+  // dive into the screen until it fills the viewport
+  const e = ease(clamp01((u - 80) / 380));
+  camera.zoom = baseZoom + (1 - baseZoom) * e;
+  camera.setViewOffset(stageW, stageH, 0, -stageH * shiftFrac * (1 - e), stageW, stageH);
+  if (e < 0.0005) {
+    camStart.copy(camera.position);
+    tgtStart.copy(controls.target);
+    controls.enabled = true;
+  } else {
+    controls.enabled = false;
+    const visH = Math.min(1.8125, 2.9 / (stageW / stageH)) * 0.94;
+    const dEnd = visH / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
+    camEnd.copy(SCREEN_N).multiplyScalar(dEnd).add(SCREEN_C);
+    camera.position.lerpVectors(camStart, camEnd, e);
+    controls.target.lerpVectors(tgtStart, SCREEN_C, e);
+  }
 
   const step = dt * 0.7;
   amount += Math.max(-step, Math.min(step, target - amount));
@@ -1035,11 +1230,6 @@ renderer.setAnimationLoop(() => {
 
   const brightness = THREE.MathUtils.smoothstep(amount, 0.12, 0.45);
   screenMat.color.setScalar(brightness);
-
-  if (brightness > 0.01 && now - lastDraw > (coarse ? 0.1 : 0.066)) {
-    drawScreen(now);
-    lastDraw = now;
-  }
 
   controls.update();
   renderer.render(scene, camera);
